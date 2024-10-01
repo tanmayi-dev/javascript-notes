@@ -4,6 +4,8 @@
 
 1. [Create a course roster using functions](#p1)
 2. [Create a Book object with functions](#p2)
+3. [Create a Country with Classes](#p3)
+4. [Create a Food Ordering Class](#p4)
 
    
 ### 1. Create a course roster using functions <a id="p1"></a>
@@ -156,7 +158,7 @@ Result :
 
 ---
 
-### 3. Create a Country with Classes
+### 3. Create a Country with Classes <a id="p3"></a>
 
 [solution](./03-create-a-country-with-classes.js)
 
@@ -226,3 +228,103 @@ Country {
    population: '70.12 million'
 }
 ```
+
+---
+
+### 4. Create a Food Ordering Class <a id="p4"></a>
+
+JavaSciprt's `get` syntax allows us to bind a property of an object to a function that will be called when we attempt to liik up its value. This is extremely useful when we want to access a dynamically computed property.
+
+For example, if we have a `Person` object, and it contains a value called `salary`, that contains the value of their annual salary in US dollars, but we want to be able to access their salary in Euro, we could use a `get` function to do compute this conversion as in this example:
+
+```js
+class Person {
+   constructor(salary) {
+      this.salary = salary;
+   }
+
+   get salaryEuro() {
+      return this.salary * .93;
+   }
+}
+
+const me = new Person(45000);
+console.log(me.salaryEuro);
+```
+
+The `set` syntax is similar to `get` but instead of returning a computed value, it binds the property of an object to a function which is called when setting that property.
+
+For example, if we have an object named `device`, we can use the `set` keyword to change the orientation of the device:
+
+```js
+const device = {
+   orientation: 'landscape',
+   set view(value) {
+      this.orientation = value;
+   }
+}
+
+device.view = 'portrait';
+device.view = 'landscape';
+```
+
+**Your task**: Create an `Order` class with getters and setters.
+
+**Parameters for the Order class**
+
+- `restaurant`: String
+- `total`: String
+- `customer`: String
+
+**Properties of the Order Class**
+
+The following properties must also be added to the Order class. They are not parameters.
+
+- `foodStatus = 0;`
+- `validFoodStatuses = [0,1,2,3];`
+
+**Order class functions**
+
+- **(get)** `orderStatus()` : Returns a string that relates to the current `foodStatus`
+   - `0`: "Waiting for the restaurant to accept the order"
+   - `1`: "Your order is being prepared"
+   - `2`: "Your order is ready for pickup"
+   - `3`: "Your order has been cancelled"
+   - `Error/default`: "Something went wrong"
+- **(set)** `orderStatus(newStatus)`: Sets the `foodStatus` for the order. If the `newStatus` is invalid, set the `foodStatus` to `null`.
+
+**Result**
+
+`testOrder`: An instance of the `Order` class
+
+**Constraints**
+- You must use a getter function for getting the food status
+- You must use a setter function for setting the food status
+
+**Example 1 :**
+
+Input:
+```js
+const orderData = {
+   restaurant: 'Chick-Fil-A',
+   total: 14.73,
+   customer: 'Henry Cavill'
+}
+```
+
+Result: 
+```js
+
+Order {
+   restaurant: 'Chick-Fil-A',
+   total: 14.73,
+   customer: 'Henry Cavill',
+   foodStatus: null,
+   validFoodStatuses: [ 0, 1, 2, 3 ]
+}
+
+```
+
+--- 
+
+### 5. 
