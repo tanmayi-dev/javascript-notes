@@ -1,6 +1,10 @@
 # Practice Challenges
 
-### 1. Create a course roster using functions
+#### Index
+
+- [1. Create a course roster using functions](#p1)
+
+### 1. Create a course roster using functions <a id="p1"></a>
 
 Create a `Student` object and a `CourseRoster` object, and use their prototype settings to create `getRoster()` and `returnGraduatingStudents()` object functions. The output of these object functions is described below/
 
@@ -42,4 +46,16 @@ const roster = [
     }
 ];
 const teacher = 'Harriet'
+```
+
+Result:
+```js
+CourseRoster {
+    roster: [
+        Student { name: 'Anwar', grades: [Array] },
+        Student { name: 'Sophie', grades: [Array] },
+        Student { name: 'Ron', grades: [Array] }
+    ],
+    teacher: 'Harriet'
+}
 ```
