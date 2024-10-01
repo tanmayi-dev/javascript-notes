@@ -68,6 +68,8 @@ CourseRoster {
 
 ### 2. Create a Book object with functions <a id="p2"></a>
 
+[solution](./02-create-a-book-object-with-functions.js)
+
 We can use the `Object.defineProperty()` method to define a new property directly on an object. This method takes the object where the property is defined, the property name we want to define, and a descriptor of the property we're defining.
 
 For example, if we have a `wrangler` object, we can define a new property called `maker` which sets its maker to "Jeep":
@@ -86,35 +88,35 @@ Similarly, `Object.create()` allows us to create a new object using an already-e
 
 **Your task**: Create a `Book` object and a `ComicBook` object. For the `Book` object, define a `setEdition` property and a `sell()` function. For the `ComicBook` object, use `Object.create()` to create a relationship between `Book` and `ComicBook`.
 
-#### Parameters for the Book object
+**Parameters for the Book object**
 
 - `title`: String
 - `author`: String
 - `quantity`: Number
 - `edition`: String
 
-#### Parameters for the ComicBook object
+**Parameters for the ComicBook object**
 
 - `title`: String
 - `author`: String
 - `quantity`: Number
 - `graphicArtist`: String
 
-#### Book object functions
+**Book object functions**
 
 - `setEdition(newEdition)`: Sets the edition of the book
 - `sell()`: Sells one copy of the book if there are available copies
 
-#### Result
+**Result**
 
 `[TestBook, TestComicBook]`: An array containing an instance of the `Book` object and an instance of the `ComicBook` object
 
-#### Constraints
+**Constraints**
 
 - You must use `defineProperty` to declare the `setEdition` function
 - You must use `Object.create` to create a relationship between `Book` and `ComicBook`
 
-#### Example 1 : 
+**Example 1 :** 
 
 Input : 
 ```js
@@ -150,4 +152,77 @@ Result :
         graphicArtist: 'Todd McFarlane'
     }
 ]
+```
+
+---
+
+### 3. Create a Country with Classes
+
+[solution](./03-create-a-country-with-classes.js)
+
+JavaScript class syntax is a method of creating objects, built on prototypes. Classes use a constructor function which is a special way to initialize objects. Classes can also contain functions that both modify and return data as in this example:
+
+```js
+class Person {
+   constructor(name, age) {
+      this.name = name;
+      this.age = age;
+   }
+
+   sayHello() {
+      return 'Hello!';
+   }
+
+   haveBirthday() {
+      this.age = this.age + 1;
+   }
+}
+```
+
+**Your task**: Create a `Country` class with two internal methods : `getOverview()` and `setPopulation()`.
+
+**Parameters for the Country class**
+
+- `name`: String
+- `continent`: String
+- `currency`: String
+- `population`: String
+
+**Country class functions**
+
+- `getOverview()`: Returns an overview of the country's data (for example, _"France is a country in Europe. Its currency is the Euro and it has a current population of 67.75 million people."_)
+- `setPopulation(newPopulation)`: Sets the population for a country
+
+**Result**
+
+`testCountry`: An instance of the `Country` class
+
+**Constraints**
+
+- You must use JavaScript class syntax
+- `getOverview` must return a string with the following syntax:
+  ```
+  [country] is a country in [continent]. Its currency is the [currency] and it has a current population of [population] people.
+  ```
+
+**Example 1 :**
+
+Input:
+```js
+const countryData = {
+   name: 'France',
+   continent: 'Europe',
+   currency: 'Euro',
+   population: '67.75 million'
+}
+```
+
+Result:
+```js
+Country {
+   name: 'France',
+   continent: 'Europe',
+   currency: 'Euro',
+   population: '70.12 million'
+}
 ```
