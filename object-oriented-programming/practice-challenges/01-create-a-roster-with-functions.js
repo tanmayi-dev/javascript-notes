@@ -52,10 +52,6 @@ CourseRoster.prototype.returnGraduatingStudents = function() {
     return this.roster.filter(student => student.checkIsPassing());
 }
 
-
-// This is how your code will be called.
-// Your answer should be an instance of the `CourseRoster` object
-// You can edit the `students` code to try different testing cases.
 const studentArray = roster.map(student => new Student(student.name, student.grades));
 const result = new CourseRoster([...studentArray], teacher);
 
