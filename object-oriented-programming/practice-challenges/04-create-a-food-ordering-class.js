@@ -1,9 +1,3 @@
-// JavaScript code​​​​​​‌​‌‌‌‌​‌‌​‌‌​‌‌​​‌‌‌​‌​‌​ below
-// Change these boolean values to control whether you see 
-// the expected answer and/or hints.
-const showExpectedResult = true;
-const showHints = true;
-
 const orderData = {
     restaurant: 'Chick-Fil-A',
     total: 14.73,
@@ -44,9 +38,5 @@ class Order {
         }
     }
 }
-
-// This is how your code will be called.
-// Your answer should be the largest value in the numbers array.
-// You can edit this code to try different testing cases.
 
 const result= new Order(orderData.restaurant, orderData.total, orderData.customer);
