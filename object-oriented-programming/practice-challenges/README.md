@@ -6,6 +6,7 @@
 2. [Create a Book object with functions](#p2)
 3. [Create a Country with Classes](#p3)
 4. [Create a Food Ordering Class](#p4)
+5. [Create User and Admin Classes](#p5)
 
    
 ### 1. Create a course roster using functions <a id="p1"></a>
@@ -327,4 +328,79 @@ Order {
 
 --- 
 
-### 5. 
+### 5. Create User and Admin Classes <a id="p5"></a>
+
+Use private properties to hide certain values and prevent them from being directly accessed. Private properties can only be accessed from inside the class declaration.
+
+We denote a private variable or function with the hash (#) symbol.
+
+For example if we had a Person class with a social security number and a function to calculate their tax bracket, we wouldn't necessarily want that information publicly accessible. So we can make these fields private as in the example below :
+
+```js
+class Person {
+   #socialSecurityNumber;
+
+   #calculateTaxBracket() {
+   }
+}
+```
+
+**Your task**: Create a `User` class and an `Admin` class. The `Admin` class extends the `User` class. The `User` class has a public `updatePassword()` function and a private `resetPassword()` function. The `Admin` class a public `deleteUser()` function.
+
+**Parameters for the User class**
+
+- `username`: String
+- `(private) password`: String
+
+**Parameters for the Admin class**
+
+- `username`: String
+- `(private) password`: String
+
+**Properties of the Admin class**
+
+The following properties must also be added to the Admin class. They are not parameters.
+
+- `isAdmin` = true;
+
+**User class functions**
+
+- `resetPassword(newPassword)`: Calls the private function `updatePassword` with the new password
+- `updatePassword(newPassword)`: Sets the user's password to the newPassword. This is a private function.
+
+**Admin class functions**
+
+- `deleteUser(userToDelete)`: Takes a string, `userToDelete` and returns a string message: _The user [userToDelete] has been deleted_
+
+**Result**
+
+`[testUser, testAdmin]`: An array containing an instance of the `User` class and an instance of the `Admin` class
+
+**Constraints**
+
+- Password must be a private variable
+- `updatePassword` must be a private function
+- You must use the `extends` keyword to create a relationship between `User` and `Admin`
+
+**Example 1:**
+
+Input:
+```js
+const userData = {
+   username: 'emma',
+   password: 'ZRYAK3GSS3wQujr'
+};
+
+const adminData = {
+   username: 'sarah',
+   password: 'r5tHZE9DUP1SgTB'
+};
+```
+
+Result:
+```js
+[
+   User { username: 'emma' },
+   Admin { username: 'sarah', isAdmin: true }
+]
+```
