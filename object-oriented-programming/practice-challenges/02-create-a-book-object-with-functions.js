@@ -1,9 +1,3 @@
-// JavaScript code​​​​​​‌​‌‌‌‌​​​‌​​​‌‌​‌​‌‌‌​‌​​ below
-// Change these boolean values to control whether you see 
-// the expected answer and/or hints.
-const showExpectedResult = true;
-const showHints = false;
-
 const bookData = {
     title: 'Pride and Prejudice',
     author: 'Emily Bronté',
@@ -50,10 +44,6 @@ ComicBook.prototype = Object.create(Book.prototype, {
     value: ComicBook
   }
 })
-
-// This is how your code will be called.
-// Your answer should be the largest value in the numbers array.
-// You can edit this code to try different testing cases.
 
 const book = new Book(bookData.title, bookData.author, bookData.quantity, bookData.edition);
 const comicBook = new ComicBook(comicBookData.title, comicBookData.author, comicBookData.quantity, comicBookData.graphicArtist);
